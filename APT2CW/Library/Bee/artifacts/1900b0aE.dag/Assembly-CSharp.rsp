@@ -395,6 +395,7 @@
 "Assets/Scripts/AudioManager.cs"
 "Assets/Scripts/AudioManager1.cs"
 "Assets/Scripts/ClickManager.cs"
+"Assets/Scripts/DragAndDrop.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/ItemData.cs"
 "Assets/Scripts/SceneManager.cs"

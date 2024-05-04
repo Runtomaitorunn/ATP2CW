@@ -22,12 +22,13 @@ public class ClickManager : MonoBehaviour
     }
     public void TryGettingItem(ItemData item)
     {
-        if (item.requiredItemID == -1 || GameManager.collectedItems.Contains(item))
+        if (item.requiredItemID == -1 || GameManager.collectedItems.ContainsKey(item))
         {
-            GameManager.collectedItems.Add(item);
+            GameManager.collectedItems.Add(item,gameObject);
             
             foreach (GameObject i in item.objectToRemove)
-            Destroy(i);
+            //Destroy(i);
+            i.SetActive(false);
             gameManager.UpdateEquipmentCanvas();
             Debug.Log("Contained" + name);
 
@@ -39,7 +40,7 @@ public class ClickManager : MonoBehaviour
     {
         if (item.itemID == 6)
         {
-            GameManager.collectedItems.Add(item);
+            GameManager.collectedItems.Add(item, gameObject);
             foreach (GameObject i in item.objectToActivate)
                 i.SetActive(true);
             Debug.Log("Contained" + name);

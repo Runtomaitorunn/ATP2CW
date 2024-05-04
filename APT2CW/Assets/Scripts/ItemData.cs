@@ -5,6 +5,7 @@ using UnityEngine;
 public class ItemData : MonoBehaviour
 {
     public int itemID, requiredItemID,musicID;
+
     public GameObject[] objectToRemove;
     public GameObject[] objectToActivate;
 

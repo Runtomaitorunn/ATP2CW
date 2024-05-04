@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
-    public static List<ItemData> collectedItems = new List<ItemData>();
+    public static Dictionary<ItemData,GameObject> collectedItems = new Dictionary<ItemData, GameObject>();
 
     [Header("Local Scene")]
     int activeLocalScene = 1;
@@ -33,8 +34,9 @@ public class GameManager : MonoBehaviour
         }
         equipmentSlots[equipmentCanvasID].color = selectedItemColor;
         selectedCanvasSlotID = equipmentCanvasID;
-        selectedItemID = collectedItems[selectedCanvasSlotID].itemID;
-
+        selectedItemID = collectedItems.ElementAt(selectedCanvasSlotID).Key.itemID;
+            // collectedItems[selectedCanvasSlotID].itemID;
+        //DragStart(selectedItemID);
 
     }
 
@@ -49,8 +51,14 @@ public class GameManager : MonoBehaviour
         int itemSlotAmount = equipmentImages.Length;
         for (int i = 0; i < itemSlotAmount; i++)
         {
-            if (i < itemAmount)           
-                equipmentImages[i].sprite = collectedItems[i].itemSlotSprite;
+            if (i < itemAmount)
+            {
+                Debug.Log(collectedItems.ElementAt(i));
+                Debug.Log(collectedItems.ElementAt(i).Key);
+                Debug.Log(collectedItems.ElementAt(i).Key.itemSlotSprite);
+                equipmentImages[i].sprite = collectedItems.ElementAt(i).Key.itemSlotSprite;
+            }
+                
             else
                 equipmentImages[i].sprite = emptyItemSlotSprite;
                             
@@ -64,4 +72,16 @@ public class GameManager : MonoBehaviour
 
     }
 
+    //public void CursorPicture(int itemID)
+    //{
+    //    foreach (ItemData item in collectedItems)
+    //    {
+    //        if (item.itemID == item.itemID)
+    //        {
+    //            item
+    //        }
+    //    }
+    //}
+
+    
 }
