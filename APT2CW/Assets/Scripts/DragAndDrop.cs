@@ -8,4 +8,6 @@ public class DragAndDrop : MonoBehaviour
     public Image[] selectedImage;
 
    
+
+   
 }

@@ -24,7 +24,7 @@ public class ClickManager : MonoBehaviour
     {
         if (item.requiredItemID == -1 || GameManager.collectedItems.ContainsKey(item))
         {
-            GameManager.collectedItems.Add(item,gameObject);
+            GameManager.collectedItems.Add(item,item.gameObject);
             
             foreach (GameObject i in item.objectToRemove)
             //Destroy(i);
@@ -40,7 +40,7 @@ public class ClickManager : MonoBehaviour
     {
         if (item.itemID == 6)
         {
-            GameManager.collectedItems.Add(item, gameObject);
+            GameManager.collectedItems.Add(item, item.gameObject);
             foreach (GameObject i in item.objectToActivate)
                 i.SetActive(true);
             Debug.Log("Contained" + name);

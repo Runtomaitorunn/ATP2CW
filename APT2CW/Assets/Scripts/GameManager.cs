@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public Sprite emptyItemSlotSprite;
     public Color selectedItemColor;
     public int selectedCanvasSlotID = 0, selectedItemID = -1;
+    public ItemData selectedItem;
 
 
 
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour
         equipmentSlots[equipmentCanvasID].color = selectedItemColor;
         selectedCanvasSlotID = equipmentCanvasID;
         selectedItemID = collectedItems.ElementAt(selectedCanvasSlotID).Key.itemID;
+        selectedItem = collectedItems.ElementAt(selectedCanvasSlotID).Key;
             // collectedItems[selectedCanvasSlotID].itemID;
         //DragStart(selectedItemID);
 
@@ -72,16 +74,18 @@ public class GameManager : MonoBehaviour
 
     }
 
-    //public void CursorPicture(int itemID)
-    //{
-    //    foreach (ItemData item in collectedItems)
-    //    {
-    //        if (item.itemID == item.itemID)
-    //        {
-    //            item
-    //        }
-    //    }
-    //}
+    public void CursorPicture()
+    {
+        Debug.Log("dragging!" + selectedItemID);
+        Debug.Log(selectedItem.itemID);
+      
+                GameObject obj;
+                collectedItems.TryGetValue(selectedItem, out obj);
+        Debug.Log("hhhhh"+obj.name);
+                if (obj)
+                    obj.SetActive(true);
+          
+    }
 
-    
+
 }
