@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
     public static Dictionary<ItemData, GameObject> collectedItems = new Dictionary<ItemData, GameObject>();
 
-    [Header("Local Scene")]
+    [Header("Scenes")]
     int activeLocalScene = 1;
+    public static bool canReceive = false;
 
     [Header("Equipment")]
     public GameObject equipmentCanvas;
@@ -83,42 +85,61 @@ public class GameManager : MonoBehaviour
 
             // gameobject follow cursor
             Vector2 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
+            
             dragObj.transform.position = cursorPosition;
+            Debug.Log("dragged z"+dragObj.transform.position.z);
         }
         
+    }
+    
+    public void CompareReceiveItem(int requiredID)
+    {
+
+        Debug.Log("this is drag object id" + dragObj.GetComponent<ItemData>().itemID);
+        Debug.Log("this is requiredID" + requiredID);
+        // get canreceive from what's on item data
+        if (dragObj.GetComponent<ItemData>().itemID == requiredID)
+        {
+            canReceive = true;
+            Debug.Log("this is canReceive" + canReceive);
+        }
     }
     public void DropCursorPicture()
     {
         if (collectedItems != null)
         {
-            // get canreceive from what's on item data
             
+
             if (canReceive)
             {
-                //destroy the selected object sprite
+                // remove items
+                var itemToRemove = collectedItems.FirstOrDefault(x => x.Key == selectedItem);
 
-                //delete it from the dictionary
-                RemoveItems();
-                // destroy the dragobj
+                  // Check if the item was found
+                if (itemToRemove.Key != null)
+                {
+                    // Remove the item from the dictionary
+                    collectedItems.Remove(itemToRemove.Key);
+                    UpdateEquipmentCanvas();
+                }
+                // set canReceive to dalse
+                canReceive = false;
             }
             //also disable the game object, if already removed then cannot
             dragObj.SetActive(false);
         }
            
     }
+  
 
-    public void RemoveItems()
+    public void CheckSceneCondition(ItemData item)
     {
-        var itemToRemove = collectedItems.FirstOrDefault(x => x.Key == selectedItem);
-
-        // Check if the item was found
-        if (itemToRemove.Key != null)
+        switch (item.itemID)
         {
-            // Remove the item from the dictionary
-            collectedItems.Remove(itemToRemove.Key);
-            UpdateEquipmentCanvas();
+            case 0:
+                //go to scene 1 
+                break;
+
         }
     }
-
 }

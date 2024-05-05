@@ -392,6 +392,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"D:/AllForUnity/Unity/2022.3.18f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"D:/AllForUnity/Unity/2022.3.18f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
+"Assets/LightIncenseStick.cs"
 "Assets/Scripts/AudioManager.cs"
 "Assets/Scripts/AudioManager1.cs"
 "Assets/Scripts/ClickManager.cs"

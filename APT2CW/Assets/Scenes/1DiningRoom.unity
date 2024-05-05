@@ -1713,6 +1713,8 @@ GameObject:
   - component: {fileID: 540047664}
   - component: {fileID: 540047666}
   - component: {fileID: 540047665}
+  - component: {fileID: 540047667}
+  - component: {fileID: 540047668}
   m_Layer: 0
   m_Name: IncenseBurner
   m_TagString: Untagged
@@ -1729,7 +1731,7 @@ Transform:
   m_GameObject: {fileID: 540047658}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.567515, y: -0.25958183, z: -5.7307644}
+  m_LocalPosition: {x: -5.567515, y: -0.25958183, z: 0}
   m_LocalScale: {x: 0.26703587, y: 0.26703587, z: 0.26703587}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1794,17 +1796,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 4
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 33268532}
-          m_TargetAssemblyTypeName: ClickManager, Assembly-CSharp
-          m_MethodName: CollectItem
-          m_Mode: 2
+        - m_Target: {fileID: 540047667}
+          m_TargetAssemblyTypeName: LightIncenseStick, Assembly-CSharp
+          m_MethodName: ReceivedItem
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 1001241459}
-            m_ObjectArgumentAssemblyTypeName: ItemData, Assembly-CSharp
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -1830,6 +1832,47 @@ MonoBehaviour:
   hintMessage: 
   hintCanvas: {fileID: 0}
   itemSlotSprite: {fileID: 0}
+--- !u!114 &540047667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540047658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed478e5a770262b4b9cd32a171b8c555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 915271896}
+  thisItemData: {fileID: 540047666}
+--- !u!50 &540047668
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540047658}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &593036116
 GameObject:
   m_ObjectHideFlags: 0
@@ -2437,6 +2480,7 @@ GameObject:
   m_Component:
   - component: {fileID: 915271895}
   - component: {fileID: 915271896}
+  - component: {fileID: 915271897}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -2496,6 +2540,36 @@ MonoBehaviour:
   selectedItemColor: {r: 0.9496855, g: 0.75969905, b: 0.3613582, a: 0.70980394}
   selectedCanvasSlotID: 0
   selectedItemID: -1
+  selectedItem: {fileID: 0}
+--- !u!114 &915271897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915271893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &943568207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2712,7 +2786,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.6256322, y: 0.31195632}
@@ -2868,17 +2942,33 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 1
+  - eventID: 5
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 915271893}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: 
+        - m_Target: {fileID: 915271896}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: CursorPicture
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 14
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 915271896}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: DropCursorPicture
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
