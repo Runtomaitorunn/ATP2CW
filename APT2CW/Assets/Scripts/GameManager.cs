@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
     public ItemData selectedItem;
     private GameObject dragObj;
 
+    [Header("Audio")]
+    public AudioManager audioManager;
+
 
 
     public void SelectItem(int equipmentCanvasID)
@@ -105,6 +108,9 @@ public class GameManager : MonoBehaviour
             {
                 canReceive = true;
                 Debug.Log("this is canReceive" + canReceive);
+                CheckSceneCondition(dragObj.GetComponent<ItemData>());
+                
+                
             }
         }
         
@@ -142,9 +148,17 @@ public class GameManager : MonoBehaviour
         switch (item.itemID)
         {
             case 0:
+                audioManager.PlayAudioByName("IncenseBurner");
+                SceneChange(1);
                 //go to scene 1 
                 break;
 
         }
+    }
+    public void SceneChange(int sceneNo)
+    {
+        // scene transition
+
+        // go to the scene based on sceneNo
     }
 }

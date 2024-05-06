@@ -8,18 +8,9 @@ public class ClickManager : MonoBehaviour
     public AudioManager audioManager;
 
 
-    public void CollectItem(ItemData item)
-    {
-        TryGettingItem(item);
-    }
+    
 
-    public void PlayAudio(ItemData item)
-    {
-        if(item.musicID == 0)
-        {
-            Debug.Log("I will play audio 0");
-        }
-    }
+    
     public void TryGettingItem(ItemData item)
     {
         if (item.requiredItemID == -1 || GameManager.collectedItems.ContainsKey(item))
