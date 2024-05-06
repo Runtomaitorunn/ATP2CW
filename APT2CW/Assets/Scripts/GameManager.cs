@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Scenes")]
     int activeLocalScene = 1;
+    public GameObject[] scenes;
     public static bool canReceive = false;
 
     [Header("Equipment")]
