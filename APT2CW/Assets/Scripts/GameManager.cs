@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     public static Dictionary<ItemData, GameObject> collectedItems = new Dictionary<ItemData, GameObject>();
 
     [Header("Scenes")]
-    int activeLocalScene = 1;
     public GameObject[] scenes;
     public static bool canReceive = false;
 
@@ -150,16 +149,40 @@ public class GameManager : MonoBehaviour
         {
             case 0:
                 audioManager.PlayAudioByName("IncenseBurner");
-                SceneChange(1);
+                SceneChange("2");
+                DisableCurrentScene("1");
                 //go to scene 1 
                 break;
 
         }
     }
-    public void SceneChange(int sceneNo)
+    public void SceneChange(string sceneNo)
     {
         // scene transition
 
-        // go to the scene based on sceneNo
+        //set scene aactive
+        foreach (GameObject scene in scenes)
+        {
+            if (scene.name == sceneNo)
+            {
+                scene.SetActive(true);
+                break;
+            }
+        }
     }
+    public void DisableCurrentScene(string sceneNo)
+    {
+        // scene transition
+
+        //set scene aactive
+        foreach (GameObject scene in scenes)
+        {
+            if (scene.name == sceneNo)
+            {
+                scene.SetActive(false);
+                break;
+            }
+        }
+    }
+
 }

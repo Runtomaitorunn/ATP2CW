@@ -1216,6 +1216,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287195492}
   m_CullTransparentMesh: 1
+--- !u!1 &300800057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 300800058}
+  m_Layer: 0
+  m_Name: Scene2RiverBank
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &300800058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300800057}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.09595551, y: 0.5641391, z: -0.056630462}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &375124215
 GameObject:
   m_ObjectHideFlags: 0
@@ -2676,6 +2707,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5673c8c0e5dbcb54db8ff1d8cd768322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scenes:
+  - {fileID: 39541354}
+  - {fileID: 300800057}
   equipmentCanvas: {fileID: 1198878127}
   equipmentSlots:
   - {fileID: 1004996709}
@@ -6289,3 +6323,4 @@ SceneRoots:
   - {fileID: 1063340751}
   - {fileID: 738971262}
   - {fileID: 1198878131}
+  - {fileID: 300800058}
