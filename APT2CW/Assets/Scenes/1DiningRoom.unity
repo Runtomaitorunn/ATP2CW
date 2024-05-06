@@ -244,7 +244,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1789716763}
-  - {fileID: 1047660328}
   m_Father: {fileID: 782138845}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &19851603
@@ -309,7 +308,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1047660327}
+        - m_Target: {fileID: 1789716762}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -338,7 +337,7 @@ MonoBehaviour:
   musicID: 0
   objectToRemove: []
   objectToActivate:
-  - {fileID: 1047660327}
+  - {fileID: 0}
   hintMessage: 
   hintCanvas: {fileID: 0}
   itemSlotSprite: {fileID: 0}
@@ -915,7 +914,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &210129014
 Transform:
   m_ObjectHideFlags: 0
@@ -3076,53 +3075,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004996706}
   m_CullTransparentMesh: 1
---- !u!1 &1047660327
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1047660328}
-  - component: {fileID: 1047660329}
-  m_Layer: 0
-  m_Name: Puzzle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1047660328
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047660327}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 19851602}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1047660329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047660327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fac4ddaaeecfcd44823ec2ed6bc2926, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameTransform: {fileID: 1789716763}
-  piecePrefab: {fileID: 5195365119207403501, guid: 5c8d543ccbe5bb548b5355ce4c6e3163, type: 3}
-  shuffling: 0
 --- !u!1 &1061294941
 GameObject:
   m_ObjectHideFlags: 0
@@ -5183,13 +5135,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1789716763}
+  - component: {fileID: 1789716764}
   m_Layer: 0
   m_Name: GameBoard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1789716763
 Transform:
   m_ObjectHideFlags: 0
@@ -5205,6 +5158,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 19851602}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1789716764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789716762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fac4ddaaeecfcd44823ec2ed6bc2926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameTransform: {fileID: 1789716763}
+  piecePrefab: {fileID: 5195365119207403501, guid: 5c8d543ccbe5bb548b5355ce4c6e3163, type: 3}
+  shuffling: 0
+  canWin: 0
+  incenseStick: {fileID: 210129013}
 --- !u!1 &1821122662
 GameObject:
   m_ObjectHideFlags: 0

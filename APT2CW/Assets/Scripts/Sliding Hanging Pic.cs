@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Security.Cryptography;
 using UnityEngine;
 
@@ -12,6 +13,8 @@ public class SlidingHangingPic : MonoBehaviour
     private int emptyLocation;
     private int size;
     public bool shuffling = false;
+    public bool canWin = false;
+    public GameObject incenseStick;
 
 
     private void Start()
@@ -19,15 +22,25 @@ public class SlidingHangingPic : MonoBehaviour
         pieces = new List<Transform>();
         size = 3;
         CreateGamePieces(0.01f);
+        Shuffle();
+        //StartCoroutine(WaitShuffle(0.01f));
     }
 
     private void Update()
     {
         // Check for completion
-        if(!shuffling && CheckCompletion())
+        if(!shuffling )
         {
-            shuffling = true;
-            StartCoroutine(WaitShuffle(0.5f));
+            if (canWin)//CheckCompletion())
+            {
+                StartCoroutine(DropIncenseStick());
+                Debug.Log("can win now");
+            }
+            else
+            {
+                Debug.Log("cannot win now");
+            }
+            
         }
 
 
@@ -59,6 +72,8 @@ public class SlidingHangingPic : MonoBehaviour
                 }
             }
         }
+
+        
     }
 
     // colCheck is used to stop horizontal moves wrapping
@@ -172,5 +187,10 @@ public class SlidingHangingPic : MonoBehaviour
             }
         }
     }
-    
+    public IEnumerator DropIncenseStick()
+    {
+        yield return new WaitForSeconds(0.5f);
+        incenseStick.SetActive(true);
+        Destroy(gameObject);
+    }
 }

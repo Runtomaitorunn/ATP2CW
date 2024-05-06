@@ -95,14 +95,19 @@ public class GameManager : MonoBehaviour
     public void CompareReceiveItem(int requiredID)
     {
 
-        Debug.Log("this is drag object id" + dragObj.GetComponent<ItemData>().itemID);
-        Debug.Log("this is requiredID" + requiredID);
+        
         // get canreceive from what's on item data
-        if (dragObj.GetComponent<ItemData>().itemID == requiredID)
+        if(dragObj != null)
         {
-            canReceive = true;
-            Debug.Log("this is canReceive" + canReceive);
+            Debug.Log("this is drag object id" + dragObj.GetComponent<ItemData>().itemID);
+            Debug.Log("this is requiredID" + requiredID);
+            if (dragObj.GetComponent<ItemData>().itemID == requiredID)
+            {
+                canReceive = true;
+                Debug.Log("this is canReceive" + canReceive);
+            }
         }
+        
     }
     public void DropCursorPicture()
     {
