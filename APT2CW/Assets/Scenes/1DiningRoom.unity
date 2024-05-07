@@ -353,6 +353,7 @@ MonoBehaviour:
   hintMessage: 
   hintCanvas: {fileID: 0}
   itemSlotSprite: {fileID: 0}
+  targetSceneName: 
 --- !u!114 &33268532 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7572224627830880655, guid: 38f2e33092c00c14d81df5bacec8c5a4, type: 3}
@@ -608,6 +609,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 915271896}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: SceneTransition
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 183063411}
+            m_ObjectArgumentAssemblyTypeName: ItemData, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!61 &183063410
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -673,6 +686,7 @@ MonoBehaviour:
   hintMessage: 
   hintCanvas: {fileID: 0}
   itemSlotSprite: {fileID: 0}
+  targetSceneName: 2BabaMemories
 --- !u!95 &183063412
 Animator:
   serializedVersion: 5
@@ -753,6 +767,7 @@ MonoBehaviour:
   hintMessage: 
   hintCanvas: {fileID: 0}
   itemSlotSprite: {fileID: 0}
+  targetSceneName: 
 --- !u!114 &184457133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -980,6 +995,7 @@ MonoBehaviour:
   hintMessage: 
   hintCanvas: {fileID: 0}
   itemSlotSprite: {fileID: 21300000, guid: ec32abf77c307d149b0301dccf2f9abe, type: 3}
+  targetSceneName: 
 --- !u!114 &210129018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1271,7 +1287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &344044352
 Transform:
   m_ObjectHideFlags: 0
@@ -1370,6 +1386,7 @@ MonoBehaviour:
   hintMessage: 
   hintCanvas: {fileID: 0}
   itemSlotSprite: {fileID: 0}
+  targetSceneName: 
 --- !u!114 &344044356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1672,6 +1689,7 @@ MonoBehaviour:
   hintMessage: 
   hintCanvas: {fileID: 0}
   itemSlotSprite: {fileID: 0}
+  targetSceneName: 
 --- !u!114 &540047667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1826,6 +1844,7 @@ MonoBehaviour:
   hintMessage: I feel so guilty. I hope baba and nainai can stop fighting
   hintCanvas: {fileID: 210704629}
   itemSlotSprite: {fileID: 0}
+  targetSceneName: 
 --- !u!114 &613087708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2099,6 +2118,7 @@ MonoBehaviour:
   hintMessage: 
   hintCanvas: {fileID: 0}
   itemSlotSprite: {fileID: 0}
+  targetSceneName: 
 --- !u!114 &911693643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2492,6 +2512,7 @@ MonoBehaviour:
   hintMessage: 
   hintCanvas: {fileID: 0}
   itemSlotSprite: {fileID: 0}
+  targetSceneName: 3FangMemories
 --- !u!114 &967130309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2524,6 +2545,18 @@ MonoBehaviour:
         - m_Target: {fileID: 915271896}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
           m_MethodName: CheckSceneCondition
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 967130308}
+            m_ObjectArgumentAssemblyTypeName: ItemData, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 915271896}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: SceneTransition
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 967130308}
@@ -2690,6 +2723,7 @@ MonoBehaviour:
   hintMessage: 
   hintCanvas: {fileID: 0}
   itemSlotSprite: {fileID: 21300000, guid: 6cb1d5cc24a02da408bec68115c0adbd, type: 3}
+  targetSceneName: 
 --- !u!114 &1001241460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3796,6 +3830,7 @@ MonoBehaviour:
   hintMessage: She is only a child! Your grandchild is more precious than Buhdda!
   hintCanvas: {fileID: 467604545}
   itemSlotSprite: {fileID: 0}
+  targetSceneName: 
 --- !u!114 &1272144992 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7246001516383157696, guid: f3de89012bd9f084ea2b79809b5b98da, type: 3}
@@ -4692,6 +4727,7 @@ MonoBehaviour:
   hintMessage: That's a bowl from Buddha! Oh my bowl!
   hintCanvas: {fileID: 1645221098}
   itemSlotSprite: {fileID: 0}
+  targetSceneName: 
 --- !u!1 &1694549161
 GameObject:
   m_ObjectHideFlags: 0

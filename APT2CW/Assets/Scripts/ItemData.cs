@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ItemData : MonoBehaviour
 {
     public int itemID, requiredItemID,musicID;
@@ -15,5 +16,8 @@ public class ItemData : MonoBehaviour
 
     [Header("EquipmentBox")]
     public Sprite itemSlotSprite;
+
+    [Header("GoToScene")]
+    public string targetSceneName;
     
 }

@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/1DiningRoom.unity
     guid: b5cc7257f797c3f40bfb1725bdc8c5ef
   - enabled: 1
-    path: Assets/Scenes/2ChickenHouse.unity
+    path: Assets/Scenes/2BabaMemories.unity
     guid: 4c52d58bf10379c47a3a8c23dd40aaa3
+  - enabled: 1
+    path: Assets/Scenes/3FangMemories.unity
+    guid: 3830f48a2c2777b43bad9668182bb744
+  - enabled: 1
+    path: Assets/Scenes/4Final.unity
+    guid: 07b89104ec7181043ab160293bbefeda
   m_configObjects: {}
