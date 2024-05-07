@@ -8,6 +8,7 @@ public class LightIncenseStick : MonoBehaviour
 
     public GameManager gameManager;
     public ItemData thisItemData;
+    public GameObject winPic;
 
     
     public void ReceivedItem()
@@ -15,4 +16,11 @@ public class LightIncenseStick : MonoBehaviour
         int requiredItemID = thisItemData.requiredItemID;
         gameManager.CompareReceiveItem(requiredItemID);
     }
+
+    public void EndScene1()
+    {
+        winPic.SetActive(true);
+        
+    }
+
 }

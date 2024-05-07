@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [Header("Scenes")]
     public GameObject[] scenes;
     public static bool canReceive = false;
+    private LightIncenseStick lightIncenseStick;
 
     [Header("Equipment")]
     public GameObject equipmentCanvas;
@@ -151,6 +152,7 @@ public class GameManager : MonoBehaviour
                 audioManager.PlayAudioByName("IncenseBurner");
                 SceneChange("2");
                 DisableCurrentScene("1");
+                lightIncenseStick.EndScene1();
                 //go to scene 1 
                 break;
 
