@@ -495,10 +495,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
-    - target: {fileID: 6717115914349721823, guid: 38f2e33092c00c14d81df5bacec8c5a4, type: 3}
-      propertyPath: audioSource
-      value: 
-      objectReference: {fileID: 698172100}
     - target: {fileID: 7119053833087375761, guid: 38f2e33092c00c14d81df5bacec8c5a4, type: 3}
       propertyPath: clickManager
       value: 
@@ -650,11 +646,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fadee7511ac9e6545bf79362563c9f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &698172100 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8424093099070718027, guid: 38f2e33092c00c14d81df5bacec8c5a4, type: 3}
-  m_PrefabInstance: {fileID: 541862435}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &714163505 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7367185325912888346, guid: f3de89012bd9f084ea2b79809b5b98da, type: 3}
@@ -722,7 +713,7 @@ MonoBehaviour:
   hintMessage: 
   hintCanvas: {fileID: 0}
   itemSlotSprite: {fileID: 0}
-  targetSceneName: 1DiningRoom
+  targetSceneName: 3FangMemories
 --- !u!114 &941335324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -941,11 +932,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6142326076384053255, guid: c5a0ea32786b1f148a40ab943ca53ddf, type: 3}
       propertyPath: m_fontColor.b
-      value: 1
+      value: 0.41823888
       objectReference: {fileID: 0}
     - target: {fileID: 6142326076384053255, guid: c5a0ea32786b1f148a40ab943ca53ddf, type: 3}
       propertyPath: m_fontColor.g
-      value: 1
+      value: 0.9633095
       objectReference: {fileID: 0}
     - target: {fileID: 6142326076384053255, guid: c5a0ea32786b1f148a40ab943ca53ddf, type: 3}
       propertyPath: m_fontColor.r
@@ -953,7 +944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6142326076384053255, guid: c5a0ea32786b1f148a40ab943ca53ddf, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4294967295
+      value: 4285265663
       objectReference: {fileID: 0}
     - target: {fileID: 6264036073992179514, guid: c5a0ea32786b1f148a40ab943ca53ddf, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1291,7 +1282,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.0551357, y: -0.37187076}
+  m_Offset: {x: -0.31034184, y: -1.152182}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1302,7 +1293,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 11.750977, y: 8.412195}
+  m_Size: {x: 10.261389, y: 6.851573}
   m_EdgeRadius: 0
 --- !u!114 &1435362897
 MonoBehaviour:
@@ -2044,11 +2035,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6142326076384053255, guid: c5a0ea32786b1f148a40ab943ca53ddf, type: 3}
       propertyPath: m_fontColor.b
-      value: 1
+      value: 0.41823888
       objectReference: {fileID: 0}
     - target: {fileID: 6142326076384053255, guid: c5a0ea32786b1f148a40ab943ca53ddf, type: 3}
       propertyPath: m_fontColor.g
-      value: 1
+      value: 0.9633095
       objectReference: {fileID: 0}
     - target: {fileID: 6142326076384053255, guid: c5a0ea32786b1f148a40ab943ca53ddf, type: 3}
       propertyPath: m_fontColor.r
@@ -2056,7 +2047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6142326076384053255, guid: c5a0ea32786b1f148a40ab943ca53ddf, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4294967295
+      value: 4285265663
       objectReference: {fileID: 0}
     - target: {fileID: 6264036073992179514, guid: c5a0ea32786b1f148a40ab943ca53ddf, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2264,7 +2255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3800291980153810588, guid: d95eb09de83fb024bb0a39fbcc9b1710, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3890014126163436177, guid: d95eb09de83fb024bb0a39fbcc9b1710, type: 3}
       propertyPath: m_Sprite

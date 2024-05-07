@@ -23,6 +23,7 @@ public class ClickManager : MonoBehaviour
             //Destroy(i);
             i.SetActive(false);
             gameManager.UpdateEquipmentCanvas();
+            audioManager.PlayAudioByName("collectable");
             Debug.Log("Contained" + name);
 
             

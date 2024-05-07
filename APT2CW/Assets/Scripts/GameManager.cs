@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 using UnityEngine.SceneManagement;
+using UnityEditor.Rendering;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,9 +27,10 @@ public class GameManager : MonoBehaviour
     public ItemData selectedItem;
     private GameObject dragObj;
 
-    [Header("Audio")]
+    [Header("Managers")]
     public AudioManager audioManager;
     public ClickManager clickManager;
+
 
 
 
@@ -114,7 +117,7 @@ public class GameManager : MonoBehaviour
                 canReceive = true;
                 Debug.Log("this is canReceive" + canReceive);
                 CheckSceneCondition(item);
-                DropCursorPicture();
+
 
 
             }
@@ -123,12 +126,13 @@ public class GameManager : MonoBehaviour
     }
     public void DropCursorPicture()
     {
-        if (collectedItems != null)
+        if (selectedItem != null)
         {
             
 
             if (canReceive)
             {
+
                 // remove items
                 var itemToRemove = collectedItems.FirstOrDefault(x => x.Key == selectedItem);
 
@@ -141,9 +145,17 @@ public class GameManager : MonoBehaviour
                 }
                 // set canReceive to dalse
                 canReceive = false;
+                //also disable the game object, if already removed then cannot
+            
+                
             }
-            //also disable the game object, if already removed then cannot
-            dragObj.SetActive(false);
+
+            if(dragObj != null)
+            {
+                dragObj.SetActive(false);
+            }
+            
+
         }
            
     }
@@ -151,46 +163,73 @@ public class GameManager : MonoBehaviour
 
     public void CheckSceneCondition(ItemData item)
     {
-        switch (item.itemID)
+        if(item != null)
         {
-            case 5:
-                audioManager.PlayAudioByName("IncenseBurner");
-                SceneChange("2");
-                DisableCurrentScene("1");
-                lightIncenseStick.EndScene1();
-                //go to scene 1 
-                break;
-            case 12:
-                audioManager.PlayAudioByName("SlidingPic");
-                foreach (GameObject i in item.objectToRemove)
-                    Destroy(i);
+            switch (item.itemID)
+            {
+                case 5:
+                    audioManager.PlayAudioByName("IncenseBurner");
+                    SceneChange("2");
+                    DisableCurrentScene("1");
+                    //go to scene 1 
                     break;
-            case 10:
-                Debug.Log("dad memories!");//hen situation
-                break;
-            case 11:
-                Debug.Log("nainai memories!");// worm situation
-                break;
+                case 12:
+                    audioManager.PlayAudioByName("SlidingPic");
+                    foreach (GameObject i in item.objectToRemove)
+                        Destroy(i);
+                    break;
+                case 10:
+                    Debug.Log("dad memories!");//hen situation
+                    break;
+                case 11:
+                    Debug.Log("nainai memories!");// worm situation
+                    break;
 
-            case 4:
+                case 4:
 
-                clickManager.ActivateProps(item);
-                break;
-            case 3:
+                    clickManager.ActivateProps(item);
+                    break;
+                case 3:
 
-                clickManager.ActivateProps(item);
-                break;
-            case 44:
-                clickManager.ActivateProps(item);
-                UpdateEquipmentCanvas();
-                break;
-            case 45:
-                clickManager.ActivateProps(item);
-                UpdateEquipmentCanvas();
-                break;
+                    clickManager.ActivateProps(item);
+                    break;
+                case 44:
+                    clickManager.ActivateProps(item);
+                    RemoveItem();
+                    UpdateEquipmentCanvas();
+                    canReceive = false;
+                    break;
+                //case 45:
+                //    clickManager.ActivateProps(item);
+                //    RemoveItem();
+                //    UpdateEquipmentCanvas();
+                //    canReceive = false;
+                //    break;
+                //case 46:
+                //    clickManager.ActivateProps(item);
+                //    RemoveItem();
+                //    UpdateEquipmentCanvas();
+                //    canReceive = false;
+                //    break;
+                //case 47:
+                //    clickManager.ActivateProps(item);
+                //    RemoveItem();
+                //    UpdateEquipmentCanvas();
+                //    canReceive = false;
+                //    break;
 
 
+            }
         }
+       
+    }
+    public void RemoveItem()
+    {
+        if(selectedItem != null)
+        {
+            collectedItems.Remove(selectedItem);
+        }
+
     }
     public void SceneChange(string sceneNo)
     {
@@ -220,10 +259,20 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
     public void SceneTransition(ItemData item)
     {
 
-        SceneManager.LoadScene(item.targetSceneName);
+        StartCoroutine(LoadSceneWithDelay(item.targetSceneName));
     }
+    private IEnumerator LoadSceneWithDelay(string sceneName)
+    {
+        audioManager.PlayAudioByName("transition");
+        
+        // Wait for 3 seconds
+        yield return new WaitForSeconds(3f);
 
+        // Load the target scene
+        SceneManager.LoadScene(sceneName);
+    }
 }
