@@ -30,4 +30,8 @@ public class Monk : MonoBehaviour
             yield return null;
         }
     }
+    public void DestroyMonk()
+    {
+        Destroy(gameObject);
+    }
 }

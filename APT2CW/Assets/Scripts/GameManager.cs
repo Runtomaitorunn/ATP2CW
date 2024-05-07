@@ -156,8 +156,14 @@ public class GameManager : MonoBehaviour
                 //go to scene 1 
                 break;
             case 4:
-                Debug.Log("shoudao!");
+
                 audioManager.PlayAudioByName("SlidingPic");
+                break;
+            case 10:
+                //hen situation
+                break;
+            case 11:
+                // worm situation
                 break;
 
         }
