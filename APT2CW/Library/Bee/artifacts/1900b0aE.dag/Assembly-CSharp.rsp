@@ -396,6 +396,7 @@
 "Assets/LightIncenseStick.cs"
 "Assets/Scripts/AudioManager.cs"
 "Assets/Scripts/ClickManager.cs"
+"Assets/Scripts/Don'tDestroyOnload.cs"
 "Assets/Scripts/DragAndDrop.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/ItemData.cs"

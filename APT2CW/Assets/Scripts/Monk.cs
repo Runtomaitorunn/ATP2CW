@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Monk : MonoBehaviour
 {
-    public SpriteRenderer childRenderer; 
+    public SpriteRenderer childRenderer;
+    private AudioManager am;
 
 
     void OnEnable()
@@ -30,8 +31,11 @@ public class Monk : MonoBehaviour
             yield return null;
         }
     }
+
     public void DestroyMonk()
     {
+        
         Destroy(gameObject);
     }
+    
 }

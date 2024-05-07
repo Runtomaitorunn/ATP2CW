@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] scenes;
     public static bool canReceive = false;
     private LightIncenseStick lightIncenseStick;
+    private Monk monk;
 
     [Header("Equipment")]
     public GameObject equipmentCanvas;
@@ -44,8 +45,6 @@ public class GameManager : MonoBehaviour
         selectedCanvasSlotID = equipmentCanvasID;
         selectedItemID = collectedItems.ElementAt(selectedCanvasSlotID).Key.itemID;
         selectedItem = collectedItems.ElementAt(selectedCanvasSlotID).Key;
-        // collectedItems[selectedCanvasSlotID].itemID;
-        //DragStart(selectedItemID);
 
     }
 
@@ -109,7 +108,7 @@ public class GameManager : MonoBehaviour
             {
                 canReceive = true;
                 Debug.Log("this is canReceive" + canReceive);
-                CheckSceneCondition(dragObj.GetComponent<ItemData>());
+                CheckSceneCondition(item);
                 
                 
             }
@@ -148,22 +147,23 @@ public class GameManager : MonoBehaviour
     {
         switch (item.itemID)
         {
-            case 0:
+            case 5:
                 audioManager.PlayAudioByName("IncenseBurner");
                 SceneChange("2");
                 DisableCurrentScene("1");
                 lightIncenseStick.EndScene1();
                 //go to scene 1 
                 break;
-            case 4:
-
+            case 12:
                 audioManager.PlayAudioByName("SlidingPic");
-                break;
+                foreach (GameObject i in item.objectToRemove)
+                    Destroy(i);
+                    break;
             case 10:
-                //hen situation
+                Debug.Log("dad memories!");//hen situation
                 break;
             case 11:
-                // worm situation
+                Debug.Log("nainai memories!");// worm situation
                 break;
 
         }

@@ -1175,7 +1175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &183063408
 Transform:
   m_ObjectHideFlags: 0
@@ -2052,7 +2052,8 @@ MonoBehaviour:
   itemID: 0
   requiredItemID: -1
   musicID: 0
-  objectToRemove: []
+  objectToRemove:
+  - {fileID: 184457130}
   objectToActivate:
   - {fileID: 129268917}
   - {fileID: 1340707894}
@@ -3793,9 +3794,9 @@ MonoBehaviour:
   musicID: 0
   objectToRemove: []
   objectToActivate:
-  - {fileID: 344044351}
   - {fileID: 1001250829}
   - {fileID: 1694549161}
+  - {fileID: 344044351}
   hintMessage: 
   hintCanvas: {fileID: 0}
   itemSlotSprite: {fileID: 0}
@@ -4235,7 +4236,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &967130307
 Transform:
   m_ObjectHideFlags: 0
@@ -5308,7 +5309,7 @@ GameObject:
   - component: {fileID: 1115858904}
   - component: {fileID: 1115858905}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: LinlinSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8636,6 +8637,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 51d3c5da0ce5e5d4d8bb64e6054b3921, type: 3}
   - {fileID: 8300000, guid: 2f7b64ffa99c40041a0585f5df4e13b9, type: 3}
   - {fileID: 8300000, guid: d8acd236ac79499419c92c7f4da0d547, type: 3}
+  - {fileID: 8300000, guid: b7979bf1fc0844e4582104fc8a1d7f5d, type: 3}
 --- !u!82 &1903374866
 AudioSource:
   m_ObjectHideFlags: 0
