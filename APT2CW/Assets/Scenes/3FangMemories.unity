@@ -439,6 +439,10 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8981725731540457788, guid: f3de89012bd9f084ea2b79809b5b98da, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1502596712}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

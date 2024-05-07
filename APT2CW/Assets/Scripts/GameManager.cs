@@ -86,13 +86,16 @@ public class GameManager : MonoBehaviour
             // activate the object
             collectedItems.TryGetValue(selectedItem, out dragObj);
             if (dragObj)
+            {
                 dragObj.SetActive(true);
 
-            // gameobject follow cursor
-            Vector2 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            
-            dragObj.transform.position = cursorPosition;
-            Debug.Log("dragged z"+dragObj.transform.position.z);
+                // gameobject follow cursor
+                Vector2 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+                dragObj.transform.position = cursorPosition;
+                Debug.Log("dragged z" + dragObj.transform.position.z);
+            }
+                
         }
         
     }
@@ -111,8 +114,9 @@ public class GameManager : MonoBehaviour
                 canReceive = true;
                 Debug.Log("this is canReceive" + canReceive);
                 CheckSceneCondition(item);
-                
-                
+                DropCursorPicture();
+
+
             }
         }
         
@@ -176,6 +180,15 @@ public class GameManager : MonoBehaviour
 
                 clickManager.ActivateProps(item);
                 break;
+            case 44:
+                clickManager.ActivateProps(item);
+                UpdateEquipmentCanvas();
+                break;
+            case 45:
+                clickManager.ActivateProps(item);
+                UpdateEquipmentCanvas();
+                break;
+
 
         }
     }
