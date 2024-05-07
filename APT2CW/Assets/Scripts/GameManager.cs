@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
         
     }
     
-    public void CompareReceiveItem(int requiredID)
+    public void CompareReceiveItem(ItemData item)
     {
 
         
@@ -104,8 +104,8 @@ public class GameManager : MonoBehaviour
         if(dragObj != null)
         {
             Debug.Log("this is drag object id" + dragObj.GetComponent<ItemData>().itemID);
-            Debug.Log("this is requiredID" + requiredID);
-            if (dragObj.GetComponent<ItemData>().itemID == requiredID)
+            Debug.Log("this is requiredID" + item.requiredItemID);
+            if (dragObj.GetComponent<ItemData>().itemID == item.requiredItemID)
             {
                 canReceive = true;
                 Debug.Log("this is canReceive" + canReceive);
@@ -154,6 +154,10 @@ public class GameManager : MonoBehaviour
                 DisableCurrentScene("1");
                 lightIncenseStick.EndScene1();
                 //go to scene 1 
+                break;
+            case 4:
+                Debug.Log("shoudao!");
+                audioManager.PlayAudioByName("SlidingPic");
                 break;
 
         }

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class ClickManager : MonoBehaviour
 {
@@ -23,6 +25,7 @@ public class ClickManager : MonoBehaviour
             gameManager.UpdateEquipmentCanvas();
             Debug.Log("Contained" + name);
 
+            
         }
         
     }
@@ -35,6 +38,14 @@ public class ClickManager : MonoBehaviour
             foreach (GameObject i in item.objectToActivate)
                 i.SetActive(true);
             Debug.Log("Contained" + name);
+        }
+    }
+    
+    public void ActivateProps(ItemData item)
+    {
+        foreach (GameObject obj in item.objectToActivate)
+        {
+            obj.SetActive(true);
         }
     }
     
