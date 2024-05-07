@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
-using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +13,7 @@ public class GameManager : MonoBehaviour
     public static bool canReceive = false;
     private LightIncenseStick lightIncenseStick;
     private Monk monk;
+    
 
     [Header("Equipment")]
     public GameObject equipmentCanvas;
@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Audio")]
     public AudioManager audioManager;
+    public ClickManager clickManager;
 
 
 
@@ -164,6 +165,15 @@ public class GameManager : MonoBehaviour
                 break;
             case 11:
                 Debug.Log("nainai memories!");// worm situation
+                break;
+
+            case 4:
+
+                clickManager.ActivateProps(item);
+                break;
+            case 3:
+
+                clickManager.ActivateProps(item);
                 break;
 
         }
